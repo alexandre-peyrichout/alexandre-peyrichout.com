@@ -1,8 +1,8 @@
 import { Link, useStaticQuery, graphql } from "gatsby"
 import React from "react"
 // styled-components
-import { NavbarList } from "../styles/header"
-import { NavbarItem } from "../styles/header"
+import { NavbarList } from "./header.styles"
+import { NavbarItem } from "./header.styles"
 
 const Header = () => {
   const data = useStaticQuery(graphql`

@@ -7,9 +7,12 @@
 
 import React, { ReactNode } from "react"
 
-import Header from "./header"
-import Footer from "./footer"
-import { LayoutWrapper } from "../styles/layout"
+import Header from "../header/header"
+import Footer from "../footer/footer"
+
+import { LayoutWrapper } from "./layout.styles"
+
+// import "./layout.css"
 
 type Props = {
   children: ReactNode
