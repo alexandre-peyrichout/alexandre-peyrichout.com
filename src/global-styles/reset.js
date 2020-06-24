@@ -6,7 +6,4 @@ export const Reset = createGlobalStyle`
     margin: 0;
     padding: 0;
 }
-html,body {
-  font-family: ${props => props.theme.fonts.main}
-}
 `

@@ -12,8 +12,6 @@ import Footer from "../footer/footer"
 
 import { LayoutWrapper } from "./layout.styles"
 
-// import "./layout.css"
-
 type Props = {
   children: ReactNode
 }
