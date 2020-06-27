@@ -19,15 +19,13 @@ const waitingNewLine = {
 }
 const termLines = [
   {
-    text: `📟  Connexion sécurisée activée à ${date.getHours()}:${
+    text: `📟 Connexion sécurisée activée à ${date.getHours()}:${
       (date.getMinutes() < 10 ? "0" : "") + date.getMinutes()
     }`,
     cmd: false,
     frames: spinnerFrames.map(spinner => {
       return {
-        text:
-          spinner +
-          " Un développeur tente d'entrer en communication avec vous...",
+        text: spinner + " Connexion en cours",
         delay: 80,
       }
     }),

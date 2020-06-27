@@ -14,4 +14,9 @@ export const TerminalWrapper = styled.div`
     margin-top: 0px;
     padding-top: 45px;
   }
+  .Terminal-window {
+    border: inherit;
+    border-radius: inherit;
+    box-shadow: inherit;
+  }
 `
