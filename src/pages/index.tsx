@@ -6,6 +6,7 @@ import { Grid, Cell } from "styled-css-grid"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import Terminal from "../components/terminal/terminal"
+import Portrait from "../components/portrait/portrait"
 
 type DataProps = {
   site: {
@@ -27,7 +28,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => (
       areas={["Portrait Terminal Terminal", "Frontend Backend DevOps"]}
     >
       <Cell area="Portrait" center middle>
-        Portrait
+        <Portrait />
       </Cell>
       <Cell area="Terminal">
         <Terminal />

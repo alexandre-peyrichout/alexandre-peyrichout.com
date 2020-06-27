@@ -3,7 +3,7 @@ export const Theme = {
     main: "multi, sans-serif",
     code: "Roboto Mono, monospace",
   },
-  colors: {},
+  colors: { main: "#300000" },
   breakpoints: {},
   spacings: {},
   animations: {},
