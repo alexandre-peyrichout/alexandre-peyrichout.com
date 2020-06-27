@@ -2,6 +2,6 @@ import styled from "styled-components"
 
 export const LayoutWrapper = styled.div`
   margin: 0 auto;
-  max-width: 960px;
-  padding: 0 1.0875rem 1.45rem;
-  `
+  min-height: 100vh;
+  padding: 0;
+`

@@ -1,10 +1,15 @@
-import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
-import styled from 'styled-components'
+import React, { ReactNode } from "react"
+import { graphql, StaticQuery } from "gatsby"
+import styled from "styled-components"
 
-import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from "gatsby-background-image"
 
-const BackgroundSection = ({ className, children }) => (
+type Props = {
+  children: ReactNode
+  className: string
+}
+
+const BackgroundSection = ({ className, children }: Props) => (
   <StaticQuery
     query={graphql`
       query {
