@@ -4,48 +4,90 @@ import "react-animated-term/dist/react-animated-term.css"
 import { TerminalWrapper } from "./terminal.styles"
 
 const spinnerFrames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
-const spinnerLines = [
+
+let date = new Date()
+
+const waitingNewLine = {
+  text: " ",
+  cmd: false,
+  frames: spinnerFrames.map(spinner => {
+    return {
+      text: spinner,
+      delay: 80,
+    }
+  }),
+}
+const termLines = [
   {
-    text: "node example.js",
-    cmd: true,
-  },
-  {
-    text: "",
+    text: `📟  Connexion sécurisée activée à ${date.getHours()}:${
+      (date.getMinutes() < 10 ? "0" : "") + date.getMinutes()
+    }`,
     cmd: false,
-    repeat: true,
-    repeatCount: 2,
-    frames: spinnerFrames.map(function (spinner) {
+    frames: spinnerFrames.map(spinner => {
       return {
-        text: spinner + " Loading app",
+        text:
+          spinner +
+          " Un développeur tente d'entrer en communication avec vous...",
         delay: 80,
       }
     }),
-    finalFrame: "✔ Loaded app",
   },
+  { text: "" },
   {
-    text: "",
-    cmd: true,
-  },
-]
-const termLines = [
-  {
-    text: "yarn",
+    text: " Hello, je m'appelle Alexandre Peyrichout",
     cmd: true,
   },
   {
-    text: "yarn install v1.6.0",
-    cmd: false,
+    text: " Je suis développeur Full Stack JavaScript & Python",
+    cmd: true,
+  },
+  waitingNewLine,
+  {
+    text: " Bienvenue dans mon laboratoire",
+    cmd: true,
   },
   {
-    text: "[1/4] 🔍  Resolving packages...",
+    text: " Tu y trouveras mon CV, mes projets ainsi que mes articles",
+    cmd: true,
+  },
+  waitingNewLine,
+  {
+    text: `⛔ Tentative d'intrusion bloquée`,
     cmd: false,
+    frames: [
+      {
+        text:
+          "🕵️ intrusion: [------------------------------------------------] 0/1000",
+        delay: 200,
+      },
+      {
+        text:
+          "🕵️ intrusion: [#######-----------------------------------------] 100/1000",
+        delay: 2000,
+      },
+      {
+        text:
+          "🕵️ intrusion: [###########################---------------------] 500/1000",
+        delay: 200,
+      },
+      {
+        text:
+          "🕵️ intrusion: [################################################] 1000/1000",
+        delay: 400,
+      },
+    ],
   },
   {
-    text: "[2/4] 🚚  Fetching packages...",
-    cmd: false,
+    text: " Je dois fermer cette connexion, un intrus a été repéré...",
+    cmd: true,
   },
   {
-    text: "[3/4] 🔗  Linking dependencies...",
+    text: " Bonne visite",
+    cmd: true,
+  },
+  waitingNewLine,
+  {
+    text: "🛡️  Pare-feu actif, votre navigation est sécurisée",
     cmd: false,
     frames: [
       {
@@ -66,43 +108,24 @@ const termLines = [
       },
     ],
   },
+
   {
-    text: "[4/4] 📃  Building fresh packages...",
+    text: "🗨️  Alexandre a quitté la conversation",
     cmd: false,
-    frames: [
-      {
-        text: "[------------------------------------------------] 0/1000",
-        delay: 200,
-      },
-      {
-        text: "[#######-----------------------------------------] 100/1000",
-        delay: 300,
-      },
-      {
-        text: "[###########################---------------------] 500/1000",
-        delay: 1200,
-      },
-      {
-        text: "[################################################] 1000/1000",
-        delay: 400,
-      },
-    ],
+    frames: spinnerFrames.map(spinner => {
+      return {
+        text: spinner + " Fermeture de la connexion",
+        delay: 80,
+      }
+    }),
   },
-  {
-    text: "✨  Done in 4.91s.",
-    cmd: false,
-  },
-  {
-    text: "",
-    cmd: true,
-    repeat: true,
-    repeatCount: 20,
-  },
+  { text: "" },
 ]
+
 const TerminalComponent = () => {
   return (
     <TerminalWrapper>
-      <Terminal lines={termLines} />
+      <Terminal lines={termLines} interval={80} />
     </TerminalWrapper>
   )
 }
