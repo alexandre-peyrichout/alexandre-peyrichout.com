@@ -7,6 +7,9 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import Terminal from "../components/terminal/terminal"
 import Portrait from "../components/portrait/portrait"
+import Frontend from "../components/frontend-flip/frontend"
+
+import { Theme } from "../global-styles/theme"
 
 type DataProps = {
   site: {
@@ -23,10 +26,16 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => (
     <SEO title="Accueil" />
     <Grid
       gap="0"
-      columns={"1fr 1fr 1fr"}
+      columns={"5% 1fr 1fr 1fr"}
       rows={"50vh 50vh"}
-      areas={["Portrait Terminal Terminal", "Frontend Backend DevOps"]}
+      areas={[
+        "Navbar Portrait Terminal Terminal",
+        "Navbar Frontend Backend DevOps",
+      ]}
     >
+      <Cell area="Navbar" center middle>
+        <Frontend bg_color="black" title="Navbar" />
+      </Cell>
       <Cell area="Portrait" center middle>
         <Portrait />
       </Cell>
@@ -34,13 +43,13 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => (
         <Terminal />
       </Cell>
       <Cell area="Frontend" center middle>
-        Frontend
+        <Frontend bg_color={Theme.colors.frontend} title="Frontend" />
       </Cell>
       <Cell area="Backend" center middle>
-        Banckend
+        <Frontend bg_color={Theme.colors.backend} title="Backend" />
       </Cell>
       <Cell area="DevOps" center middle>
-        DevOps
+        <Frontend bg_color={Theme.colors.devops} title="DevOps" />
       </Cell>
     </Grid>
     {/* 

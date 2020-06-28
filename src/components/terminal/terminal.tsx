@@ -12,14 +12,14 @@ const waitingNewLine = {
   cmd: false,
   frames: spinnerFrames.map(spinner => {
     return {
-      text: spinner,
-      delay: 80,
+      text: spinner + " ",
+      delay: 50,
     }
   }),
 }
 const termLines = [
   {
-    text: `📟 Connexion sécurisée activée à ${date.getHours()}:${
+    text: `Connexion sécurisée activée à ${date.getHours()}:${
       (date.getMinutes() < 10 ? "0" : "") + date.getMinutes()
     }`,
     cmd: false,
@@ -30,9 +30,19 @@ const termLines = [
       }
     }),
   },
-  { text: "" },
+  waitingNewLine,
   {
-    text: " Hello, je m'appelle Alexandre Peyrichout",
+    text: " Bonjour",
+    cmd: true,
+  },
+  waitingNewLine,
+  {
+    text: " Tu te demandes peut-être qui je suis...",
+    cmd: true,
+  },
+  waitingNewLine,
+  {
+    text: " Mon nom est Alexandre Peyrichout",
     cmd: true,
   },
   {
@@ -41,83 +51,27 @@ const termLines = [
   },
   waitingNewLine,
   {
-    text: " Bienvenue dans mon laboratoire",
+    text: " Tu as maintenant accès à mon laboratoire",
     cmd: true,
   },
   {
-    text: " Tu y trouveras mon CV, mes projets ainsi que mes articles",
-    cmd: true,
-  },
-  waitingNewLine,
-  {
-    text: `⛔ Tentative d'intrusion bloquée`,
-    cmd: false,
-    frames: [
-      {
-        text:
-          "🕵️ intrusion: [------------------------------------------------] 0/1000",
-        delay: 200,
-      },
-      {
-        text:
-          "🕵️ intrusion: [#######-----------------------------------------] 100/1000",
-        delay: 2000,
-      },
-      {
-        text:
-          "🕵️ intrusion: [###########################---------------------] 500/1000",
-        delay: 200,
-      },
-      {
-        text:
-          "🕵️ intrusion: [################################################] 1000/1000",
-        delay: 400,
-      },
-    ],
-  },
-  {
-    text: " Je dois fermer cette connexion, un intrus a été repéré...",
-    cmd: true,
-  },
-  {
-    text: " Bonne visite",
+    text: " Tu y trouveras mon CV, mes projets et mes articles",
     cmd: true,
   },
   waitingNewLine,
   {
-    text: "🛡️  Pare-feu actif, votre navigation est sécurisée",
-    cmd: false,
-    frames: [
-      {
-        text: "[------------------------------------------------] 0/1000",
-        delay: 200,
-      },
-      {
-        text: "[#######-----------------------------------------] 100/1000",
-        delay: 2000,
-      },
-      {
-        text: "[###########################---------------------] 500/1000",
-        delay: 200,
-      },
-      {
-        text: "[################################################] 1000/1000",
-        delay: 400,
-      },
-    ],
+    text: " Je dois fermer cette connexion, nous ne sommes pas seuls...",
+    cmd: true,
   },
-
   {
-    text: "🗨️  Alexandre a quitté la conversation",
-    cmd: false,
-    frames: spinnerFrames.map(spinner => {
-      return {
-        text: spinner + " Fermeture de la connexion",
-        delay: 80,
-      }
-    }),
+    text: " Bonne visite et n'oublies pas de suivre le lapin blanc",
+    cmd: true,
   },
-  { text: "" },
+  waitingNewLine,
+  {
+    text: "Alexandre a quitté la conversation",
+    cmd: false,
+  },
 ]
 
 const TerminalComponent = () => {

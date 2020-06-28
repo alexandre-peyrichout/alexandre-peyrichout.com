@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Theme } from "../../global-styles/theme"
 
 export const TerminalWrapper = styled.div`
   width: 100%;
@@ -8,7 +9,7 @@ export const TerminalWrapper = styled.div`
   color: white;
 
   .Terminal-prompt {
-    color: red;
+    color: ${Theme.colors.main};
   }
   .Terminal-body {
     margin-top: 0px;
@@ -18,5 +19,8 @@ export const TerminalWrapper = styled.div`
     border: inherit;
     border-radius: inherit;
     box-shadow: inherit;
+  }
+  .Terminal-cursor {
+    background-color: ${Theme.colors.main};
   }
 `
