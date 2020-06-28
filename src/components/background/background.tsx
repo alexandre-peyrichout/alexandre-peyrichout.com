@@ -6,14 +6,14 @@ import BackgroundImage from "gatsby-background-image"
 
 type Props = {
   children: ReactNode
-  className: string
+  className?: string
 }
 
 const BackgroundSection = ({ className, children }: Props) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "portrait_matrix2.jpg" }) {
+        desktop: file(relativePath: { eq: "tenor.gif" }) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 5000) {
               ...GatsbyImageSharpFluid_withWebp
@@ -46,8 +46,7 @@ const StyledBackgroundSection = styled(BackgroundSection)`
   width: 100%;
   height: 100%;
   background-position: top left;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
 `
 
 export default StyledBackgroundSection

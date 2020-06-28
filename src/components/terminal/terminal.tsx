@@ -64,7 +64,7 @@ const termLines = [
     cmd: true,
   },
   {
-    text: " Bonne visite et n'oublies pas de suivre le lapin blanc",
+    text: " Bonne visite et n'oublie pas de suivre le lapin blanc",
     cmd: true,
   },
   waitingNewLine,

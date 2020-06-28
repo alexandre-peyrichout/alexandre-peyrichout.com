@@ -34,7 +34,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => (
       ]}
     >
       <Cell area="Navbar" center middle>
-        <Frontend bg_color="black" title="Navbar" />
+        <div>Menu</div>
       </Cell>
       <Cell area="Portrait" center middle>
         <Portrait />
@@ -43,13 +43,25 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => (
         <Terminal />
       </Cell>
       <Cell area="Frontend" center middle>
-        <Frontend bg_color={Theme.colors.frontend} title="Frontend" />
+        <Frontend
+          bgColorFront={Theme.colors.frontend}
+          bgColorBack="black"
+          title="Frontend"
+        />
       </Cell>
       <Cell area="Backend" center middle>
-        <Frontend bg_color={Theme.colors.backend} title="Backend" />
+        <Frontend
+          bgColorFront={Theme.colors.backend}
+          bgColorBack="black"
+          title="Backend"
+        />
       </Cell>
       <Cell area="DevOps" center middle>
-        <Frontend bg_color={Theme.colors.devops} title="DevOps" />
+        <Frontend
+          bgColorFront={Theme.colors.devops}
+          bgColorBack="black"
+          title="DevOps"
+        />
       </Cell>
     </Grid>
     {/* 

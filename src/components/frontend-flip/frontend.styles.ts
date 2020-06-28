@@ -6,7 +6,6 @@ type Props = {
 
 export const Wrapper = styled.div`
   width: 100%;
-  overflow: hidden;
   height: 100%;
   background-color: ${(props: Props) =>
     props.bg_color ? props.bg_color : null};
